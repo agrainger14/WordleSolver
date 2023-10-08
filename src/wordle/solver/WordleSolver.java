@@ -37,10 +37,10 @@ public class WordleSolver {
                 String result;
 
                 System.out.println("Attempt #" + (i + 1) + " Try this word : " + tryWord + " (out of " + words.size() + " words)");
-                System.out.println("(g = green, y = yellow, e = empty)");
+                System.out.println("g = green, y = yellow, e = empty OR type 'print' to see all valid words");
                 result = scan.nextLine().trim();
 
-                while (!isGuessValid(result, wordLength)) {
+                while (!isGuessValid(result, wordLength, words)) {
                     result = scan.nextLine().trim();
                 }
 
@@ -56,9 +56,17 @@ public class WordleSolver {
      * @param wordLength The expected length of the guess.
      * @return True if the guess is valid or else, false.
      */
-    private boolean isGuessValid(String result, int wordLength) {
+    private boolean isGuessValid(String result, int wordLength, Set<String> words) {
         if (result.length() != wordLength) {
             System.out.println("Try again, the guess must be " + wordLength + " chars long");
+            return false;
+        }
+
+        if (result.toLowerCase().trim().equals("print")) {
+            for (String word : words) {
+                System.out.println(word);
+            }
+            System.out.println("g = green, y = yellow, e = empty OR type 'print' to see all valid words");
             return false;
         }
 
