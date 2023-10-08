@@ -1,5 +1,5 @@
 # WordleSolver
-A simple Java application that assists you in playing the popular word puzzle game called Wordle. It loads a list of words from a CSV file, allows you to make guesses, and provides attemps to provide the correct word based on the inputted guesses.
+A simple Java application that assists in playing the popular word puzzle game called Wordle. It loads a list of valid Wordle words from a CSV file, allows you to make guesses via the console, and attempts to provide the correct word based on the inputted guesses.
 
 ## How it Works
 - Loads a dictionary of valid 5 letter words using in the Wordle Game from a CSV file.
